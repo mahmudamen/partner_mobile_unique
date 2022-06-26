@@ -10,7 +10,7 @@
         <field name="arch" type="xml">
             <group name="social_media" position="before">
                 <group name="partner" string="Partners">
-                    <field name="partner_ref_unique" />
+                    <field name="partner_mobile_unique" />
                 </group>
             </group>
         </field>
