@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Partner unique reference",
+    "name": "Partner unique mobile",
     "summary": "Add an unique constraint to partner ref field",
     "version": "13.0.1.0.0",
     "category": "Customer Relationship Management",
