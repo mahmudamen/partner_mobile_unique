@@ -8,13 +8,13 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    partner_ref_unique = fields.Selection(
+    partner_mobile_unique = fields.Selection(
         selection=[
             ("none", "None"),
             ("companies", "Only companies"),
             ("all", "All partners"),
         ],
-        string="Unique partner reference for",
+        string="Unique partner mobile for",
         default="none",
     )
 
@@ -29,5 +29,5 @@ class ResCompany(models.Model):
                 .with_context(active_test=False)
                 .search([("company_id", "in", [False] + self.ids)])
             )
-            partners._check_ref()
+            partners._check_mobile()
         return res

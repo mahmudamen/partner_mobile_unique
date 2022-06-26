@@ -10,7 +10,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     @api.constrains("mobile", "is_company", "company_id")
-    def _check_ref(self):
+    def _check_mobile(self):
         for partner in self.filtered("mobile"):
             # If the company is not defined in the partner, take current user company
             company = partner.company_id or self.env.company
@@ -26,6 +26,6 @@ class ResPartner(models.Model):
                 # Don't raise when coming from contact merge wizard or no duplicates
                 if other and not self.env.context.get("partner_mobile_unique_merging"):
                     raise ValidationError(
-                        _("This reference is equal to partner '%s'")
+                        _("This Mobile number is equal to partner '%s'")
                         % other[0].display_name
                     )
